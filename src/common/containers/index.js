@@ -2,6 +2,12 @@ import styled from 'styled-components';
 
 import { block, flex, transition } from '../mixins/mixins';
 
+export const MainWrapper = styled.main`
+  height: 100vh;
+  width: 100%;
+  position: relative;
+`;
+
 export const InputContainer = styled.div`
   ${block}
   position:relative;
@@ -28,7 +34,24 @@ export const Input = styled.input`
   font-weight: 400;
   font-size: 14px;
   padding: 0 20px 0 40px;
+  &:valid {
+    border-color: #5dc3f9;
+    + svg {
+      * {
+        stroke: #5dc3f9;
+      }
+    }
+  }
+  &:invalid {
+    border-color: red;
+    + svg {
+      * {
+        stroke: red;
+      }
+    }
+  }
   + svg {
+    stroke-width: 0.5px;
     * {
       stroke: #99a4b8;
     }
@@ -60,16 +83,11 @@ export const Input = styled.input`
   }
 `;
 
-export const Wrapper = styled.main`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
-
 export const Column = styled.div`
   ${block}
   display:flex;
   flex-direction: column;
+  align-items: ${({ align = 'flex-start' }) => align};
 `;
 
 export const Row = styled.div`
@@ -95,4 +113,23 @@ export const FooterContaner = styled.footer`
   width: 100%;
   background: #ffffff;
   padding: 36px 160px 36px 150px;
+`;
+
+export const Card = styled.div`
+  ${block}
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #eff2fd;
+`;
+
+export const Circle = styled.div`
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  background: #eff2fd;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
 `;

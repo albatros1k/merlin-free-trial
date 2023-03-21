@@ -27,4 +27,5 @@ export const SubTitle = styled.p`
   line-height: 18px;
   text-align: ${({ ta = 'center' }) => ta};
   margin: ${({ m = 0 }) => m};
+  padding: ${({ p = 0 }) => p};
 `;

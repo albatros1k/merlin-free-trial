@@ -1,37 +1,27 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
-import { ReactComponent as Mail } from '../../assets/mail.svg';
-import { PurpleButton } from '../../common/buttons';
-import { Column, Input, InputContainer, Wrapper } from '../../common/containers';
-import { H3, SubTitle, Tag } from '../../common/titles';
+import { Form } from '../Form/Form';
 
-const Card = styled.div`
-  width: 555px;
-  height: 300px;
-  padding: 30px 63px 42px;
-  display: flex;
-  flex-direction: column;
+import { SuccessMessage } from '../SuccessMessage/SuccessMessage';
+
+const CardContent = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 177px;
+  transform: translateX(-50%);
   border: 1px solid #eff2fd;
-  border-radius: 0 0 6px 6px;
+  border-radius: 6px;
+  z-index: 1;
+  background: #ffffff;
+  width: 555px;
+  height: 520px;
 `;
 
 export const Content = () => {
-  return (
-    <Wrapper>
-      <Card>
-        <H3 m='0 0 12px'>Free 30-day Pro Trial</H3>
-        <SubTitle m='0 0 20px'>Would you like to access multiple bundles, detailed analytics, .csv download, and many more features? Try Pro for free!</SubTitle>
-        <Column m='0 auto'>
-          <InputContainer m='0 0 8px'>
-            <Input placeholder='Your e-mail' />
-            <Mail />
-          </InputContainer>
-          <Tag align='center' m='0 0 25px'>
-            We'll send you all info related to your free trial via e-mail
-          </Tag>
-          <PurpleButton h='40px'>Subscribe for free trial</PurpleButton>
-        </Column>
-      </Card>
-    </Wrapper>
-  );
+  const [success, setSuccess] = useState(false);
+
+  const toggleSuccess = () => setSuccess((prev) => !prev);
+
+  return <CardContent>{success ? <SuccessMessage {...{ onBack: toggleSuccess }} /> : <Form {...{ setSuccess }} />}</CardContent>;
 };

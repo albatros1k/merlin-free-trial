@@ -13,6 +13,11 @@ export const PurpleButton = styled.button`
   outline: none;
   border: none;
   cursor: pointer;
+  &:disabled {
+    background: transparent;
+    border: 1px solid #eff2fd;
+    color: #99a4b8;
+  }
 `;
 
 export const Button = styled.button`
@@ -27,7 +32,17 @@ export const Button = styled.button`
   padding: ${({ p = '0px' }) => p};
   transition: all 0.3s ease 0s;
   color: #ffffff;
+  * {
+    cursor: pointer !important;
+  }
   &:hover {
     transform: scale(1.01);
   }
+`;
+
+export const BackButton = styled(Button)`
+  border: 1px solid #eff2fd;
+  width: 60%;
+  color: #99a4b8;
+  margin-top: auto;
 `;
