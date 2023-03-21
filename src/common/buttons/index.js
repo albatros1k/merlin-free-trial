@@ -38,6 +38,11 @@ export const Button = styled.button`
   &:hover {
     transform: scale(1.01);
   }
+  @media only screen and (max-width: 768px) {
+    width: 160px;
+    height: 28px;
+    font-size: 12px;
+  }
 `;
 
 export const BackButton = styled(Button)`
@@ -45,4 +50,8 @@ export const BackButton = styled(Button)`
   width: 60%;
   color: #99a4b8;
   margin-top: auto;
+  height: 40px;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;

@@ -6,15 +6,21 @@ import { PurpleButton } from '../../common/buttons';
 import { Card, Column, Input, InputContainer } from '../../common/containers';
 import { H3, SubTitle, Tag } from '../../common/titles';
 import topPreview from '../../assets/top-preview.png';
+import { useMobile } from '../../hooks';
 
 const Preview = styled.img`
-  width: 525px;
-  height: 218px;
+  width: 100%;
+  height: 229px;
+  @media only screen and (max-width: 768px) {
+    height: 169px;
+    width: 100%;
+  }
 `;
 
-export const Form = ({ setSuccess }) => {
-  const [email, setEmail] = useState('');
+export const Form = ({ setSuccess, email, setEmail }) => {
   const [isValid, setIsValid] = useState(false);
+
+  const isMobile = useMobile();
 
   const deferredEmail = useDeferredValue(email);
 
@@ -32,11 +38,11 @@ export const Form = ({ setSuccess }) => {
   return (
     <Fragment>
       <Preview src={topPreview} />
-      <Card w='555px' p='30px 63px 42px'>
-        <H3 m='0 0 12px'>Free 30-day Pro Trial</H3>
+      <Card w='100%' p={isMobile ? '20px 23px 40px' : '23px 63px 42px'}>
+        <H3 m={isMobile ? '0 0 10px' : '0 0 12px'}>Free 30-day Pro Trial</H3>
         <SubTitle m='0 0 20px'>Would you like to access multiple bundles, detailed analytics, .csv download, and many more features? Try Pro for free!</SubTitle>
-        <Column m='0 auto'>
-          <InputContainer m='0 0 8px'>
+        <Column m={isMobile ? '0' : '0 auto'}>
+          <InputContainer m='0 0 8px' w='100%'>
             <Input placeholder='Your e-mail' type='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' required={true} value={deferredEmail} onChange={onChangeEmail} />
             <Mail />
           </InputContainer>

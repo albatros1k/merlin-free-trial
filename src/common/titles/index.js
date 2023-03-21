@@ -17,6 +17,9 @@ export const H3 = styled.h3`
   color: #0e0e0e;
   text-align: ${({ ta = 'center' }) => ta};
   margin: ${({ m = 0 }) => m};
+  @media only screen and (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const SubTitle = styled.p`
@@ -28,4 +31,7 @@ export const SubTitle = styled.p`
   text-align: ${({ ta = 'center' }) => ta};
   margin: ${({ m = 0 }) => m};
   padding: ${({ p = 0 }) => p};
+    @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
