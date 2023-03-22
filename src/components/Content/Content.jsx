@@ -17,7 +17,7 @@ const CardContent = styled.div`
   border-radius: 6px;
   z-index: 1;
   background: #ffffff;
-  width: 555px;
+  width: 755px;
   @media only screen and (max-width: 768px) {
     width: 90%;
     top: 70px;

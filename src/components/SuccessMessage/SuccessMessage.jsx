@@ -11,9 +11,9 @@ export const SuccessMessage = ({ onBack, email }) => {
       <Circle>
         <Star />
       </Circle>
-      <H3 m='0 0 12px'>We've sent you details!</H3>
+      <H3 m='0 0 12px'>Free Trial Request Submitted</H3>
       <SubTitle p={isMobile ? '0' : '0 61px'} m='0 0 100px'>
-        Thank you. We have just sent you all the details related to your free pro subscription. Please check your email at {email}.
+        Thank you. You will receive an email with the details to access your free trial subscriptions within the next 10 days.
       </SubTitle>
       <BackButton onClick={onBack}>Back to Form</BackButton>
     </Column>

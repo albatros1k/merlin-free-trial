@@ -11,7 +11,7 @@ import { API } from '../../services/api';
 import { Loader } from '../../common/loader';
 
 const Preview = styled.img`
-  width: 100%;
+  width: 555px;
   height: 229px;
   @media only screen and (max-width: 768px) {
     height: 169px;
@@ -52,7 +52,7 @@ export const Form = ({ setSuccess, email, setEmail }) => {
       <Preview src={topPreview} />
       <Card w='100%' p={isMobile ? '20px 23px 40px' : '23px 63px 42px'}>
         <H3 m={isMobile ? '0 0 10px' : '0 0 12px'}>Free 30-day Pro Trial</H3>
-        <SubTitle m='0 0 20px'>Would you like to access multiple bundles, detailed analytics, .csv download, and many more features? Try Pro for free!</SubTitle>
+        <SubTitle m='0 0 20px'>Add several wallets in bundles, Add watchlists, detailed analytics, csv download and more features</SubTitle>
         <Column m={isMobile ? '0' : '0 auto'}>
           <InputContainer m='0 0 8px' w='100%'>
             <Input placeholder='Your e-mail' type='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' required={true} value={deferredEmail} onChange={onChangeEmail} />

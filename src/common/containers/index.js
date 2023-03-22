@@ -26,7 +26,7 @@ export const InputContainer = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 325px;
+  width: 425px;
   height: 40px;
   transition-property: border;
   border-radius: 4px;
